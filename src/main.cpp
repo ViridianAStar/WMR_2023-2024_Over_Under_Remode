@@ -24,22 +24,14 @@ motor blMotor20 = motor(PORT20, ratio6_1, true);
 motor trMotor13 = motor(PORT13, ratio6_1, false);
 motor mrMotor12 = motor(PORT12, ratio6_1, false);
 motor brMotor11 = motor(PORT11, ratio6_1, false);
-/*motor tlMotor18 = motor(PORT17, ratio18_1, true);
-motor mlMotor19 = motor(PORT19, ratio18_1, true);
-motor blMotor20 = motor(PORT20, ratio18_1, true);
-motor trMotor13 = motor(PORT13, ratio18_1, false);
-motor mrMotor12 = motor(PORT12, ratio18_1, false);
-motor brMotor11 = motor(PORT11, ratio18_1, false);*/
-
 motor catapaultMotor14 = motor(PORT14, ratio18_1, false);
 motor intakeMotor2 = motor(PORT2, ratio18_1, true);
-//motor armElevator3 = motor(PORT3, ratio18_1, false);
 motor catapaultMotor4 = motor(PORT4, ratio18_1, true);
+
 // not motors
 controller mainController = controller(primary);
 inertial inertialSensor5 = inertial(PORT5);
-//encoder enc1 = encoder(Brain.ThreeWirePort.A);
-//rotation rot1 = rotation(PORT8, true);
+
 pneumatics solonoidF = pneumatics(Brain.ThreeWirePort.F); //hang
 
 pneumatics solonoidH = pneumatics(Brain.ThreeWirePort.H); //forward wing
@@ -453,24 +445,10 @@ void motorReverse() {
 
 void pre_auton(void) {
 
-  //int originX = 10;
-  //int originY = 20;
-  //int width = 80;
-  //int height = 80;
   // purge inertial sensor
   inertialSensor5.calibrate();
   // ensure the inertial sensor is done calibrating before continuing on
   ensureCalibration();
-  //Brain.Screen.drawRectangle(det_Positionon_screen('X', 0, originX, 0), det_Positionon_screen('Y', 0, originY, 0), width, height, green);
-
-  // purge encoder(s) rotation value
-  //enc1.resetRotation();
-
-  //purge rotation values
-  //rot1.resetPosition();
-  /*if (rot1.position(deg) != 0) {
-    rot1.setPosition(0, deg);
-  }*/
 
   // set brakes to the defined mode in the case of autonomous function it should be brake
   setdtBrakemode(brake);
@@ -494,12 +472,6 @@ void pre_auton(void) {
   //Brain.Screen.drawRectangle(det_Positionon_screen('X', width, originX, 5), det_Positionon_screen('Y', 0, originY, 0), width, height, green);
   wait(25, msec);
   Brain.Screen.clearScreen();
-
-  //autonSelect_buttons();
-  /*if (type != 0 && type != 4) {
-    color_select();
-  }*/
-
 }
 
 void endgame() {
@@ -588,20 +560,6 @@ void defensiveOld(){
 
   chassis.turn_to_angle(90);
 
-  /*wait(5, seconds);
-
-  chassis.drive_distance(-10);
- 
-  chassis.turn_to_angle(225);
-
-  chassis.drive_distance(18);
-
-  chassis.drive_distance(-6);
-
-  chassis.drive_distance(3);
-
-  chassis.turn_to_angle(270);*/
-
   intakeMotor2.stop(coast);
 
   // set the mode of braking to coast for user post execution
@@ -649,18 +607,6 @@ void offensiveOld(){
   chassis.drive_distance(8);
 
   chassis.turn_to_angle(270);
-
-  /*wait(5, seconds);
-
-  chassis.drive_distance(-10);
-
-  chassis.drive_distance(3);
-
-  chassis.drive_distance(-6);
-
-  chassis.drive_distance(3);
-
-  chassis.turn_to_angle(270);*/
 
   intakeMotor2.stop(coast);
 
@@ -942,6 +888,9 @@ void skillsAuton() {
   chassis.drive_distance(-40);
   chassis.drive_distance(25);
   deployBackWings();
+
+
+
   /*chassis.drive_distance(20); 
   chassis.turn_to_angle(90); 
   deployBackWings();
