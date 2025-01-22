@@ -1,6 +1,7 @@
 # WMR_2023-2024_Over_Under
 
 # NOTICE: Please Commit Changes To Your Teams Branches
+# NOTICE: This is to be considered a legacy branch for archival purposes. Only team Legacy's code will be modified (for cleanliness purposes.)
 
 # Useful Links:
 - [Over Under Game Manual](https://www.vexrobotics.com/over-under-manual)
