@@ -1,6 +1,5 @@
 # 2023-2024_Legacy
 The 42747 Legacy team bot code for 2023-2024 Over Under using JAR-Template for odometry. 
-This code is defined for configuration Occiptor the current and only configuration of bot
 
 # JAR-Template
 A simple and powerful VexCode Pro V5 library featuring PID, odometry, and custom motion algorithms. (short for Jackson Area Robotics Template)
